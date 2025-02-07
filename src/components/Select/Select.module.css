@@ -1,0 +1,224 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.trigger {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 4px 10px;
+  height: 26px;
+  gap: 5px;
+  width: inherit;
+  background-color: transparent;
+  border: 1px solid transparent;
+
+  &[data-placeholder] {
+    &.dark {
+      color: var(--dark-400);
+      &:hover {
+        text-shadow: none;
+        color: var(--dark-50);
+      }
+    }
+    &.light {
+      color: var(--light-400);
+      &:hover {
+        color: var(--light-900);
+      }
+    }
+  }
+
+  &.dark {
+    color: var(--dark-50);
+    border-bottom-color: var(--dark-50);
+    &:focus-visible {
+      border: 1px solid var(--dark-50);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0px 0px 2px 2px var(--dark-950) inset;
+      text-shadow: none;
+    }
+    &:hover {
+      border-color: var(--dark-50);
+      background: var(--dark-950);
+      box-shadow: var(--drop-light-3);
+      text-shadow: var(--drop-light-1);
+    }
+  }
+
+  &.light {
+    color: var(--light-900);
+    border-bottom-color: var(--light-900);
+    &:focus-visible {
+      border: 1px solid var(--light-950);
+      background: var(--light-100);
+      box-shadow: 0px 0px 2px 2px var(--light-950) inset;
+    }
+    &:hover {
+      border-color: var(--light-900);
+      background: var(--light-200);
+      box-shadow: 0px 0px 2px 0px var(--light-900);
+    }
+  }
+  &:disabled,
+  &:disabled:hover {
+    font-style: italic;
+    border-color: transparent;
+    box-shadow: none;
+    cursor: not-allowed;
+    &.dark {
+      color: var(--dark-400);
+    }
+    &.light {
+      color: var(--light-400);
+    }
+  }
+}
+
+.icon {
+}
+
+.content {
+  overflow: hidden;
+
+  /* on position=popper, it constraints the width and height of the content to the trigger's width and to the viewport's dimensions */
+  /* max-height: var(--radix-select-content-available-height); */
+  width: var(--radix-select-trigger-width);
+  max-height: 200px;
+  &.dark {
+    border: 1px solid var(--dark-50);
+    box-shadow: 0px 0px 2px 0px var(--dark-50);
+    background: rgba(0, 0, 0, 0.6);
+  }
+  &.light {
+    border: 1px solid var(--light-900);
+    background: rgba(240, 230, 215, 1);
+    box-shadow: 0px 0px 2px 0px var(--light-900);
+  }
+}
+
+.viewport {
+  padding: 4px;
+  &.dark {
+  }
+  &.light {
+  }
+}
+
+.item {
+  font-size: 14px;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 6px;
+  margin-block: 4px;
+  position: relative;
+  user-select: none;
+  &.dark {
+    color: var(--dark-50);
+  }
+  &.light {
+    color: var(--light-800);
+  }
+  /* check */
+  &[data-disabled] {
+    pointer-events: none;
+    font-style: italic;
+    opacity: 0.8;
+    cursor: not-allowed;
+    box-shadow: none;
+    text-shadow: none;
+    border-color: transparent;
+    background: none;
+  }
+  /*  */
+  &[data-highlighted] {
+    outline: none;
+    &.dark {
+      background: #000;
+      /* var(--dark-950); */
+      box-shadow: 0px 0px 2px 0px;
+    }
+    &.light {
+      background: var(--light-300);
+      color: var(--light-900);
+      box-shadow: 0px 0px 1px 1px var(--light-800);
+    }
+  }
+  &[data-state="checked"] {
+    &.dark {
+      background: var(--dark-50);
+      color: var(--dark-950);
+      &:hover,
+      &:focus {
+        text-shadow: none;
+      }
+    }
+    &.light {
+      background: var(--light-800);
+      color: var(--light-100);
+      &:hover,
+      &:focus {
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+.label {
+  user-select: none;
+  display: flex;
+  justify-content: end;
+  padding-right: 8px;
+
+  font-size: 13px;
+  font-style: italic;
+  line-height: 25px;
+  &.dark {
+    color: var(--dark-50);
+  }
+  &.light {
+    color: var(--light-950);
+  }
+}
+
+.separator {
+  height: 1px;
+  margin: 5px;
+  &.dark {
+    background-color: var(--dark-50);
+  }
+  &.light {
+    background-color: var(--light-800);
+  }
+}
+
+.item-indicator {
+  position: absolute;
+  right: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  cursor: default;
+  background: transparent;
+  &.dark > svg {
+    color: var(--dark-50);
+    filter: drop-shadow(0 0px 1px #fff);
+  }
+  &.light > svg {
+    color: var(--light-900);
+  }
+}

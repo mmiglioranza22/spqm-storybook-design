@@ -1,0 +1,42 @@
+import { Meta, Typeset } from "@storybook/blocks";
+import { typography } from "./typography";
+
+<Meta title="Tokens/Typography" />
+
+**Font:** Sofia Sans
+
+**Weights:** 400(regular)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.xs),
+    Number(typography.size.sm),
+    Number(typography.size.base),
+    Number(typography.size.lg),
+    Number(typography.size.xl),
+    Number(typography.size["2xl"]),
+    Number(typography.size["3xl"]),
+    Number(typography.size["4xl"]),
+  ]}
+  fontWeight={400}
+  sampleText={"The quick brown fox jumps over the lazy dog."}
+  fontFamily={"Sofia Sans Variable, sans-serif"}
+/>
+
+**Weights:** 700(bold)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.xs),
+    Number(typography.size.sm),
+    Number(typography.size.base),
+    Number(typography.size.lg),
+    Number(typography.size.xl),
+    Number(typography.size["2xl"]),
+    Number(typography.size["3xl"]),
+    Number(typography.size["4xl"]),
+  ]}
+  fontWeight={700}
+  sampleText={"The quick brown fox jumps over the lazy dog."}
+  fontFamily={"Sofia Sans Variable, sans-serif"}
+/>

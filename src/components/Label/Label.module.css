@@ -1,0 +1,26 @@
+label {
+  all: unset;
+}
+
+.label {
+  padding: 4px 10px;
+  font-style: italic;
+  cursor: default;
+}
+
+.dark,
+.primary {
+  color: var(--dark-50);
+}
+
+.light {
+  color: var(--light-950);
+}
+
+.primary:hover,
+.dark:hover,
+.light:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: transparent;
+}

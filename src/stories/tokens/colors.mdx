@@ -1,0 +1,32 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+import { colors } from "./colors";
+
+<Meta title="Tokens/Colors" />
+
+## Brand Colors
+
+<ColorPalette>
+  {/* <ColorItem
+    title="Brand"
+    subtitle="Brand Colors"
+    colors={{
+      Subtle: "#a5b4fc",
+      Default: "#4f46e5",
+    }}
+  /> */}
+  {Object.entries(colors)
+    .slice(0, 4)
+    .map(([name, value]) => (
+      <ColorItem key={name} title={name} colors={value} />
+    ))}
+</ColorPalette>
+
+## Semantic Colors
+
+<ColorPalette>
+  {Object.entries(colors)
+    .slice(4)
+    .map(([name, value]) => (
+      <ColorItem key={name} title={name} colors={value} />
+    ))}
+</ColorPalette>

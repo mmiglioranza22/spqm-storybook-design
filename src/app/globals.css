@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '@fontsource-variable/sofia-sans';
+
+:root {
+  /* font-family: 'Sofia Sans', sans-serif; */
+  /* --background: #ffffff;
+  --foreground: #171717; */
+
+  /* COLORS */
+  --fill-table-fill-dark-theme: rgba(0 0 0 / 0.7);
+  --fill-quest-preview-dark-fill: rgba(54 54 54 / 0.4);
+  --fill-quest-inner-dark-shadow: #363636;
+  /* SUCCESS */
+  --success-50: #effeef;
+  --success-100: #d9ffda;
+  --success-200: #b6fcb8;
+  --success-300: #7df882;
+  --success-400: #25e92f;
+  --success-500: #13d41d;
+  --success-600: #09b013;
+  --success-700: #0b8a13;
+  --success-800: #0f6c15;
+  --success-900: #0e5914;
+  --success-950: #013206;
+  /* DANGER */
+  --danger-50: #fff2f1;
+  --danger-100: #ffe2e1;
+  --danger-200: #ffcac8;
+  --danger-300: #ffa4a1;
+  --danger-400: #fe706b;
+  --danger-500: #f63e37;
+  --danger-600: #e4251e;
+  --danger-700: #c01b15;
+  --danger-800: #9e1b16;
+  --danger-900: #831d19;
+  --danger-950: #480907;
+  /* INFO */
+  --info-50: #f7f8f8;
+  --info-100: #eef0f0;
+  --info-200: #dadddd;
+  --info-300: #c2c7c7;
+  --info-400: #949c9b;
+  --info-500: #778080;
+  --info-600: #606969;
+  --info-700: #4e5656;
+  --info-800: #434949;
+  --info-900: #3b3f3f;
+  --info-950: #272a2a;
+  /* DARK-THEME */
+  --dark-50: #f7f7f7;
+  --dark-100: #ededed;
+  --dark-200: #dfdfdf;
+  --dark-300: #cccccc;
+  --dark-400: #adadad;
+  --dark-500: #999999;
+  --dark-600: #888888;
+  --dark-700: #7b7b7b;
+  --dark-800: #676767;
+  --dark-900: #545454;
+  --dark-950: #363636;
+  /* LIGHT-THEME */
+  --light-50: #faf7f2;
+  --light-100: #f4ece0;
+  --light-200: #e8d8c0;
+  --light-300: #dabe97;
+  --light-400: #d0a97e;
+  --light-500: #bf8650;
+  --light-600: #b17245;
+  --light-700: #935c3b;
+  --light-800: #774a35;
+  --light-900: #613e2d;
+  --light-950: #341f16;
+  /* BLUE */
+  --blue-50: #f3f6fc;
+  --blue-100: #e6ecf8;
+  --blue-200: #c6d7f1;
+  --blue-300: #95b7e4;
+  --blue-400: #5c90d4;
+  --blue-500: #356fbb;
+  --blue-600: #2658a3;
+  --blue-700: #204684;
+  --blue-800: #1e3d6e;
+  --blue-900: #1e355c;
+  --blue-950: #14223d;
+  /* ORANGE */
+  --orange-50: #fffbeb;
+  --orange-100: #fef3c7;
+  --orange-200: #fde58a;
+  --orange-300: #fbd24e;
+  --orange-400: #fabe25;
+  --orange-500: #f49d0c;
+  --orange-600: #d87607;
+  --orange-700: #bc560a;
+  --orange-800: #923f0e;
+  --orange-900: #78340f;
+  --orange-950: #451a03;
+  /* MONOCHROME */
+  --monochrome-50: #ffffff;
+  --monochrome-100: #efefef;
+  --monochrome-200: #dcdcdc;
+  --monochrome-300: #bdbdbd;
+  --monochrome-400: #989898;
+  --monochrome-500: #7c7c7c;
+  --monochrome-600: #656565;
+  --monochrome-700: #525252;
+  --monochrome-800: #464646;
+  --monochrome-900: #3d3d3d;
+  --monochrome-950: #292929;
+  /* YELLOW */
+  --yellow-50: #ffffea;
+  --yellow-100: #fffcc5;
+  --yellow-200: #fffa85;
+  --yellow-300: #fff046;
+  --yellow-400: #ffe21b;
+  --yellow-500: #fec200;
+  --yellow-600: #e29700;
+  --yellow-700: #bb6b02;
+  --yellow-800: #985308;
+  --yellow-900: #7c430b;
+  --yellow-950: #482300;
+  /* RED */
+  --red-50: #fff1f1;
+  --red-100: #ffe1e0;
+  --red-200: #ffc8c6;
+  --red-300: #ffa19e;
+  --red-400: #ff6a66;
+  --red-500: #fd3c36;
+  --red-600: #eb1d17;
+  --red-700: #c6140f;
+  --red-800: #a31511;
+  --red-900: #7a1613;
+  --red-950: #4a0705;
+  /* INDIGO */
+  --indigo-drag: #9747ff;
+  --indigo-50: #fdf3ff;
+  --indigo-100: #f8e6ff;
+  --indigo-200: #f1ccff;
+  --indigo-300: #eaa5ff;
+  --indigo-400: #de6fff;
+  --indigo-500: #cc39fc;
+  --indigo-600: #b319e0;
+  --indigo-700: #9711ba;
+  --indigo-800: #7e1098;
+  --indigo-900: #6a137c;
+  --indigo-950: #450054
+  
+
+  /* FILL */
+  --fill-table-fill-dark-theme: rgba(0 0 0 / 0.7);
+  --fill-quest-preview-dark-fill: rgba(54 54 54 / 0.4);
+  --fill-quest-inner-dark-shadow: #363636;
+
+  /* OPACITY */
+  --opacity-40: rgba(0 0 0 / 0.4);
+  --opacity-60: rgba(0 0 0 / 0.6);
+  --opacity-50: rgba(0 0 0 / 0.5);
+
+  /* GRADIENTS */
+
+  --navlink-border-gradient-dark: linear-gradient(
+      90deg,
+      #000 0%,
+      #fff 40%,
+      #fff 60%,
+      #000 100%
+    )
+    1;
+  --navlink-border-gradient-light: linear-gradient(
+      90deg,
+      transparent 0%,
+      #341f16 40%,
+      #341f16 60%,
+      transparent 100%
+    )
+    1;
+  --navlink-background-gradient-dark: linear-gradient(
+    90deg,
+    transparent 0%,
+    #363636 30%,
+    #363636 70%,
+    transparent 100%
+  );
+  --navlink-background-gradient-light: linear-gradient(
+    90deg,
+    transparent 0%,
+    #dabe97 30%,
+    #dabe97 70%,
+    transparent 100%
+  );
+
+  /* SHADOWS */
+  /* buttons */
+  --inner-shadow-10: inset 0 0 10px 0 #000000;
+  --inner-shadow-5: 0px 0px 5px 0px #000 inset;
+  --inner-shadow-4: inset 0 0 4px 0 #000000;
+  --inner-shadow-2: 0px 0px 2px 0px #000 inset;
+
+  --drop-light-4: 0 0 4px 0 #ffffff;
+  --drop-light-3: 0 0 3px 0 #ffffff;
+  --drop-shadow-4-inner-light-4: inset 0 0 4px 0 #ffffff, 0 0 4px 0 #000000;
+  --inner-light-2: inset 0 0 2px 0 #ffffff;
+
+  /* text */
+  --drop-shadow-3: 0px 0px 3px #000;
+  --drop-shadow-2: 0px 0px 2px #000;
+  --drop-light-1: 0px 0px 1px #fff;
+
+  --hover-button-3d: inset 0 0 2px 0 #ffffff, inset -1px -1px 1px 0 #000000;
+  --radio-shadow: inset 0 0 9px 0 #000000, 0 0 1px 0 #000000;
+  --radio-light: inset 0 0 3px 1px #fabe25, 0 0 1px 0 #000000;
+  --radio-checked: inset 0 0 4px 0 #000000;
+  --radio-shadow-2: inset 0 0 6px 0 #000000, 0 0 1px 0 #000000;
+  --radio-light-2: inset 0 0 3px 3px #ffffff, 0 0 1px 0 #000000;
+  --avatar-border-hover: 0 0 2px 1px #000000;
+  --drop-shadow-1: 0 0 1px 0 #000000;
+  --light-shadow-2: 0 0 2px 0 #ffffff;
+  --default-info-3d: inset -1px -1px 1px 0 #000000;
+  --pressed-button-3d: inset 0 0 0 0 #ffffff, inset 1px 1px 1px 0 #000000;
+  --radio-inner-light-2: inset 0 0 2px 2px #ffffff, 0 0 1px 0 #000000;
+  --checked-box-q: inset 0 0 1px 0 #000000;
+  --simple-checkbox-inner-shadow: inset 0 0 1px 1px #000000;
+  --inner-shadow-10: inset 0 0 10px 0 #000000;
+  --inner-quest-shadow-light: inset 0 0 10px 5px #774a35;
+  --inner-quest-shadow-dark: inset 0 0 7px 1px #f7f7f7;
+  --dropshadow-primary_box: 0 0 2px 0 #f3f6fc;
+  --dropshadow-primary_text: 0 0 1px 0 #f3f6fc;
+  --dropshadow-complementary_box: 0 0 2px 0 #451a03;
+  --dropshadow-complementary_text: 0 0 1px 0 #451a03;
+
+  --settings-menu-button_inner_shadow: inset 0 0 2px 0 #000000;
+  --avatar-avatar-hover: inset 0 0 10px 0 #ffffff;
+  --avatar-avatar: inset 0 0 12px 0 #000000, 0 0 6px 0 #000000;
+  --settings-menu-details-overlay: inset 0 0 12px 2px #000000;
+  --settings-menu-menu-inner-shadow: inset 0 0 30px 0 #000000;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+body {
+  @apply dark:bg-fill-quest-preview-dark;
+  @apply bg-light-200;
+}

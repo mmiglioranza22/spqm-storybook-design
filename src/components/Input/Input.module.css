@@ -1,0 +1,98 @@
+/* reset */
+input {
+  all: unset;
+}
+
+.input {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  height: 26px;
+  /* border-left: none; */
+  /* border-right: none; */
+  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.input:hover {
+  border: 1px solid;
+}
+
+.dark {
+  color: var(--dark-50);
+  border-bottom-color: var(--dark-50);
+}
+.dark::placeholder {
+  color: var(--dark-400);
+}
+
+.dark:hover {
+  border-color: var(--dark-50);
+  background: var(--dark-950);
+  box-shadow: var(--drop-light-3);
+  text-shadow: var(--drop-light-1);
+}
+
+.dark:hover::placeholder {
+  text-shadow: none;
+  color: #fff;
+}
+.dark:disabled:hover::placeholder {
+  color: var(--dark-400);
+}
+
+.dark:focus-visible {
+  border: 1px solid var(--dark-50);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 2px 2px #000 inset;
+  text-shadow: none;
+}
+
+.light {
+  color: var(--light-800);
+  border-bottom-color: var(--light-900);
+}
+.light::placeholder {
+  color: var(--light-400);
+}
+
+.light:hover {
+  border-color: var(--light-900);
+  background: var(--light-300);
+  box-shadow: 0px 0px 2px 0px var(--light-900);
+}
+
+.light:hover::placeholder {
+  color: var(--light-900);
+}
+.light:disabled:hover::placeholder {
+  color: var(--light-400);
+}
+
+.light:focus-visible {
+  border: 1px solid var(--light-950);
+  background: var(--light-100);
+  box-shadow: 0px 0px 2px 2px var(--light-950) inset;
+}
+
+.input:disabled,
+.input:disabled:hover {
+  font-style: italic;
+  opacity: 0.8;
+  cursor: not-allowed;
+  box-shadow: none;
+  text-shadow: none;
+  border-color: transparent;
+  background: none;
+}
+
+/* .input:focus {
+  outline-offset: 4px;
+  outline: 2px solid #2f5fcc;
+  text-shadow: none;
+} */

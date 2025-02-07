@@ -1,0 +1,227 @@
+* {
+  /* --min-droppable-width:  */
+}
+
+.droppable-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: min-content;
+  min-width: min-content;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  /* background-color: grey; */
+  &.dark {
+    &:hover,
+    &:focus {
+    }
+    &.dragging-droppable {
+      border: 4px dashed var(--indigo-drag);
+      box-shadow: none;
+    }
+  }
+  &.light {
+    &:hover,
+    &:focus {
+    }
+    &.dragging-droppable {
+      border: 4px dashed var(--indigo-drag);
+      box-shadow: none;
+    }
+  }
+}
+
+.droppable-draggable-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  /* background-color: grey; */
+
+  &.dark {
+    &:hover,
+    &:focus {
+    }
+    &.dragging-droppable {
+      border: 2px dashed var(--indigo-drag);
+      box-shadow: none;
+    }
+  }
+  &.light {
+    &:hover,
+    &:focus {
+    }
+    &.dragging-droppable {
+      border: 2px dashed var(--indigo-drag);
+      box-shadow: none;
+    }
+  }
+}
+
+.draggable-droppable-container {
+  width: 100%;
+  height: 100%;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px;
+  gap: 2px;
+  padding: 15px;
+  border-radius: 2px;
+
+  &.dark {
+    color: var(--dark-50);
+    border: 1px solid var(--dark-950, #363636);
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+      ),
+      rgba(54, 54, 54, 0.4);
+    box-shadow: 0px 0px 3px 0px var(--dark-50, #f7f7f7) inset;
+
+    &:hover,
+    &:focus-visible {
+      border: 1px solid var(--dark-50, #f7f7f7);
+      background-color: var(
+        --fill-table-fill-dark-theme,
+        rgba(54, 54, 54, 0.9)
+      );
+    }
+    &.dragging {
+      border: 2px solid var(--indigo-drag) !important;
+    }
+  }
+
+  &.light {
+    color: var(--light-950);
+    border: 1px solid var(--light-950, #341f16);
+    background-color: var(--light-300, #d0a97e);
+    box-shadow: 0px 0px 10px 2px var(--light-800, #774a35) inset;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--light-400, #dabe97);
+      box-shadow: 0px 0px 10px 2px var(--light-900, #774a35) inset;
+    }
+    &.dragging {
+      border: 2px solid var(--indigo-drag) !important;
+    }
+  }
+}
+
+.draggable-container {
+  /* width: 100%; */
+  /* height: 100%; */
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px;
+  gap: 2px;
+  border-radius: 2px;
+
+  &.dark {
+    color: var(--dark-50);
+    border: 1px solid var(--dark-950, #363636);
+    background-color: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+      ),
+      rgba(54, 54, 54, 0.4);
+    box-shadow: 0px 0px 3px 0px var(--dark-50, #f7f7f7) inset;
+    &:hover,
+    &:focus-visible {
+      border: 1px solid var(--dark-50, #f7f7f7);
+      background-color: var(
+        --fill-table-fill-dark-theme,
+        rgba(54, 54, 54, 0.9)
+      );
+    }
+    &.dragging {
+      border: 2px solid var(--indigo-drag);
+    }
+  }
+
+  &.light {
+    color: var(--light-950);
+    border: 1px solid var(--light-950, #341f16);
+    background-color: var(--light-300, #d0a97e);
+    box-shadow: 0px 0px 10px 2px var(--light-800, #774a35) inset;
+
+    &:hover,
+    &:focus-visible {
+      border: 1px solid var(--light-100, #f7f7f7);
+      box-shadow: none;
+    }
+    &:active {
+    }
+  }
+
+  /* border: 5px solid green !important; */
+}
+
+.draggable-header {
+  display: flex;
+  height: 36px;
+  padding: 6px 8px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  &.dark {
+    background-color: var(--dark-950, #363636);
+    &:hover {
+    }
+    &:focus-visible {
+    }
+    &:active {
+    }
+  }
+
+  &.light {
+    background-color: var(--light-200);
+
+    &:hover {
+    }
+    &:focus-visible {
+    }
+    &:active {
+    }
+  }
+}
+
+.draggable-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 2px;
+
+  &.dark {
+    &:hover {
+    }
+    &:focus-visible {
+    }
+    &:active {
+    }
+  }
+
+  &.light {
+    &:hover {
+    }
+    &:focus-visible {
+    }
+    &:active {
+    }
+  }
+}
