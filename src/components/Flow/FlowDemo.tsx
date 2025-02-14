@@ -186,10 +186,6 @@ const Flow = ({ variant, ref }: FlowDemoProps) => {
     },
   }));
 
-  useEffect(() => {
-    console.log({ nodes });
-  }, [nodes]);
-
   return (
     <div ref={reactFlowWrapper} style={{ width: "100%", height: "100%" }}>
       <ReactFlow
@@ -227,19 +223,19 @@ const FlowDemo = ({ variant }: FlowDemoProps) => {
   const childRef = useRef<unknown>(null);
 
   const handleNodeDrop = (newParentId: string, nodeId: string, evt: Event) => {
-    console.log(childRef?.current);
-    console.log({ newParentId, nodeId });
+    // console.log(childRef?.current);
+    // console.log({ newParentId, nodeId });
     childRef?.current?.updateNodes(newParentId, nodeId, evt);
   };
 
   const handleDragStart = ({ active }: DragStartEvent) => {
-    console.log("start", { active });
+    // console.log("start", { active });
   };
 
   const handleDragEnd = ({ over, active, activatorEvent }: DragEndEvent) => {
     const originDroppable = active.data.current?.currentDroppable;
     const targetDroppable = over?.id;
-    console.log("dragend", { over, active });
+    // console.log("dragend", { over, active });
 
     if (targetDroppable === null || targetDroppable === undefined) return;
 
@@ -251,10 +247,10 @@ const FlowDemo = ({ variant }: FlowDemoProps) => {
       over &&
       over?.data?.current?.accepts.includes(active?.data?.current?.type)
     ) {
-      console.log("can drop");
+      // console.log("can drop");
       const newParentId = over.id as string;
       const nodeId = active.id as string;
-      console.log({ activatorEvent });
+      // console.log({ activatorEvent });
       handleNodeDrop(newParentId, nodeId, activatorEvent);
     } else {
       console.log("Invalid drop zone for active draggable");
