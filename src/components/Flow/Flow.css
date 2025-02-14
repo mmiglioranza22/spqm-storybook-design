@@ -1,0 +1,186 @@
+/* https://reactflow.dev/learn/customization/theming */
+
+.react-flow {
+  --xy-background-pattern-dots-color-default: none !important;
+  --xy-background-pattern-line-color-default: none !important;
+  --xy-background-pattern-cross-color-default: none !important;
+}
+
+.react-flow__node {
+  &.dragging {
+    box-shadow: 0px 0px 0px 2px var(--indigo-drag);
+  }
+}
+.react-flow__edge {
+}
+.react-flow__handle {
+}
+
+.light .react-flow__background {
+  background-color: var(--light-200);
+}
+
+.dark .react-flow__background {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.base-node {
+  width: 100%;
+  height: 100%;
+  min-width: 100px;
+  min-height: 50px;
+  flex-direction: column;
+  /* cursor: grab; */
+}
+
+.group-node {
+  position: relative;
+  min-width: 200px;
+  min-height: 200px;
+  width: 50vw;
+  height: 50vh;
+}
+
+.group-node-header {
+  position: absolute;
+  top: -20px;
+  left: 0px;
+}
+
+.main-container-node {
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+}
+
+/* ============ Modes ============ */
+
+.dark .react-flow__node {
+  color: var(--dark-50);
+
+  > .base-node {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    border: 1px solid var(--dark-50, #f7f7f7);
+    background-color: var(--dark-950);
+    &:hover {
+      background-color: var(--dark-800);
+    }
+  }
+
+  > .group-node {
+    border: 1px solid #363636;
+    background-color: var(--dark-950);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 200px;
+    height: 45vh;
+    &:hover {
+      /* background-color: rgba(0, 0, 0, 0.5); */
+    }
+  }
+
+  > .main-container-node {
+    background-color: var(--dark-950);
+  }
+}
+
+.light .react-flow__node {
+  color: var(--light-950);
+
+  > .base-node {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    border: 1px solid var(--light-950);
+    background-color: var(--light-300);
+    &:hover {
+      background-color: var(--light-200);
+    }
+  }
+
+  > .group-node {
+    /* border: 1px solid #363636; */
+    background-color: var(--light-200);
+    background-color: var(--light-200);
+    width: 200px;
+    height: 45vh;
+    &:hover {
+      /* background-color: rgba(255, 255, 255, 0.3); */
+    }
+  }
+
+  > .main-container-node {
+    background-color: var(--light-300);
+  }
+}
+
+/* ====== Floating edge for easy connect: https://reactflow.dev/examples/nodes/easy-connect ======*/
+
+.react-flow__edges svg {
+  /* node z-index while dragging is 1000 */
+  z-index: 1001 !important;
+}
+
+.customNodeBody {
+  position: relative;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 1;
+  /* cursor: pointer; */
+}
+
+.customHandle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  transform: none;
+  opacity: 0;
+  z-index: 1001 !important;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2px;
+}
+
+.dark .react-flow__edge-path {
+  stroke: var(--dark-50);
+  stroke-width: 2px;
+}
+
+.dark .react-flow__marker {
+  color: var(--dark-50);
+}
+
+.light .react-flow__edge-path {
+  stroke: var(--light-900);
+}
+
+.light .react-flow__marker {
+  color: var(--light-900);
+}
+
+/* ====== DEVTOOLS ====== */
+
+.light .react-flow__devtools {
+  color: var(--light-950);
+}
+
+.dark .react-flow__devtools {
+  color: var(--dark-50);
+}
+
+.light .react-flow__devtools-nodeinfo {
+  color: var(--light-950);
+}
+
+.dark .react-flow__devtools-nodeinfo {
+  color: var(--dark-50);
+}

@@ -28,6 +28,7 @@ type DragAndDropDemoProps = {
   disabled?: boolean;
 };
 
+// TODO: check swappy and review styles (hover, dragging, default) with Flow component
 const DragAndDropDemo = ({ variant, disabled }: DragAndDropDemoProps) => {
   const draggableBodyClasses = clsx(styles["draggable-body"], styles[variant]);
 
