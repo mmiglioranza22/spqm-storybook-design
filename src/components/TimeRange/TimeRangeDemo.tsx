@@ -1,7 +1,7 @@
 // install (please try to align the version of installed @nivo packages)
 // yarn add @nivo/calendar
-import { type DateOrString, ResponsiveCalendar } from "@nivo/calendar";
-import customStyle from "./Calendar.module.css";
+import { type DateOrString, ResponsiveTimeRange } from "@nivo/calendar";
+import customStyle from "./TimeRange.module.css";
 
 import exampleData from "./seed-data";
 import RabbetBox from "../RabbetBox/RabbetBox";
@@ -10,7 +10,7 @@ type CalendarDemoProps = {
   variant: "dark" | "light";
   from: DateOrString;
   to: DateOrString;
-  spaceMonths: boolean;
+  // spaceMonths: boolean;
 };
 
 const colorPallete = {
@@ -38,45 +38,40 @@ const colorPallete = {
   },
 };
 
-const CalendarDemo = ({
-  variant,
-  from,
-  to,
-  spaceMonths,
-}: CalendarDemoProps) => {
+const CalendarDemo = ({ variant, from, to }: CalendarDemoProps) => {
   return (
     <div
       style={{
         width: "800px",
-        height: "600px",
+        height: "400px",
       }}
     >
       <RabbetBox variant={variant} customStyle={customStyle}>
-        <ResponsiveCalendar
+        <ResponsiveTimeRange
           data={exampleData}
           from={from}
           to={to}
           emptyColor={colorPallete[variant].emptyColor}
           colors={colorPallete[variant].colors}
-          margin={{ top: 10, right: 30, bottom: 10, left: 30 }}
-          yearSpacing={40}
-          monthBorderColor={colorPallete[variant].monthBorderColor}
-          dayBorderColor={colorPallete[variant].dayBorderColor}
-          monthBorderWidth={2}
+          margin={{ top: 40, right: 40, bottom: 80, left: 40 }}
           dayBorderWidth={0}
-          monthSpacing={spaceMonths ? 15 : 0}
-          daySpacing={2}
+          dayBorderColor={colorPallete[variant].dayBorderColor}
+          daySpacing={4}
+          weekdayTicks={[1, 3, 5]}
+          dayRadius={9}
           legends={[
             {
-              anchor: "bottom-right",
+              anchor: "bottom",
               direction: "row",
-              translateY: 36,
+              justify: false,
               itemCount: 4,
               itemWidth: 42,
               itemHeight: 36,
               itemsSpacing: 14,
               itemDirection: "right-to-left",
-              itemTextColor: "red !important",
+              translateX: -60,
+              translateY: -60,
+              symbolSize: 20,
             },
           ]}
         />

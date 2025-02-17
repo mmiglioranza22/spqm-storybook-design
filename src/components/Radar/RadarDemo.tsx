@@ -59,7 +59,6 @@ const RadarDemo = ({ variant }: RadarDemoProps) => {
       style={{
         width: "600px",
         height: "400px",
-        // backgroundColor: "rgba(0,0,0,0.4)",
       }}
     >
       <RabbetBox variant={variant}>
