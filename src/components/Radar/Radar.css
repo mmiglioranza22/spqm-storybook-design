@@ -1,0 +1,35 @@
+text {
+  font-size: 18px !important;
+}
+
+.recharts-layer .recharts-polar-angle-axis-ticks {
+  transform: scale(1.1) translateX(-20px) translateY(-12px) !important;
+  & text {
+    font-size: 22px !important;
+  }
+}
+
+.recharts-legend-item-text {
+  font-size: 24px;
+}
+
+.polar-grid {
+  opacity: 0.4;
+}
+.tooltip {
+  color: var(--dark-950) !important;
+}
+
+/* extra last line on PolarAngleAxis */
+line.angleAxis {
+  display: none;
+}
+
+.radius-axis > g {
+  transform: translateY(6px);
+}
+
+/* origin */
+.radius-axis > g > :first-child {
+  display: none;
+}

@@ -17,6 +17,7 @@ import { Grip } from "lucide-react";
 
 type VariantProps = "dark" | "light";
 
+// TODO: review types and unused vars
 const BaseNode = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> &

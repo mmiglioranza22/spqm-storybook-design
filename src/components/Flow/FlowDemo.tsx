@@ -34,14 +34,6 @@ import {
 import DevTools from "./FlowDevTools";
 import { DndContext, DragEndEvent, DragStartEvent } from "@dnd-kit/core";
 
-// TODO check which drag/drop events are relevant for draggable (base) and droppable (groups) nodes
-// Add edges
-// Connect / delete. Create nodes on menu context?
-// Reset position
-// Discrete drag / steps
-// avoid board node overlap
-// Dynamic sizes for viewport -> resizable? somehow chande initialNodes dynamically? store update
-
 const initialNodes = [
   {
     id: "main-container",
@@ -229,13 +221,13 @@ const FlowDemo = ({ variant }: FlowDemoProps) => {
   };
 
   const handleDragStart = ({ active }: DragStartEvent) => {
-    // console.log("start", { active });
+    console.log("start", { active });
   };
 
   const handleDragEnd = ({ over, active, activatorEvent }: DragEndEvent) => {
     const originDroppable = active.data.current?.currentDroppable;
     const targetDroppable = over?.id;
-    // console.log("dragend", { over, active });
+    console.log("dragend", { over, active });
 
     if (targetDroppable === null || targetDroppable === undefined) return;
 
@@ -247,10 +239,10 @@ const FlowDemo = ({ variant }: FlowDemoProps) => {
       over &&
       over?.data?.current?.accepts.includes(active?.data?.current?.type)
     ) {
-      // console.log("can drop");
+      console.log("can drop");
       const newParentId = over.id as string;
       const nodeId = active.id as string;
-      // console.log({ activatorEvent });
+      console.log({ activatorEvent });
       handleNodeDrop(newParentId, nodeId, activatorEvent);
     } else {
       console.log("Invalid drop zone for active draggable");
